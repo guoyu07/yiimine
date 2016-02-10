@@ -2,9 +2,9 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=database',
-    'username' => 'username',
-    'password' => 'password',
+    'dsn' => 'mysql:host=localhost;dbname=yiimine',
+    'username' => 'root',
+    'password' => '',
     'charset' => 'utf8',
     'enableQueryCache' => true,
     'enableSchemaCache' => true,

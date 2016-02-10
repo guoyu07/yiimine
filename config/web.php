@@ -39,7 +39,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => require(__DIR__ . '/db.php'),
+        'db' => IS_PRODUCTION ? require(__DIR__ . '/db.php') : require(__DIR__ . '/local-db.php'),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
