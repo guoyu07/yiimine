@@ -21,18 +21,20 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
     <?php
-    $this->registerJsFile('/js/angular.min.js', ['position' => \yii\web\View::POS_HEAD]);
-    $this->registerJsFile('/js/angular-drag-and-drop-lists.min.js', ['position' => \yii\web\View::POS_HEAD]);
-    $this->registerJsFile('/js/controllers/SiteIndexCtrl.js', ['position' => \yii\web\View::POS_HEAD]);
-    $this->registerJsFile('/js/main.js', ['position' => \yii\web\View::POS_END]);
-    $this->registerJsFile('/js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js', ['position' => \yii\web\View::POS_END]);
-    $this->registerJsFile('/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5', ['position' => \yii\web\View::POS_END]);
-    $this->registerJsFile('/js/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5', ['position' => \yii\web\View::POS_END]);
-    $this->registerJsFile('/js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6', ['position' => \yii\web\View::POS_END]);
-    $this->registerJsFile('/js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7', ['position' => \yii\web\View::POS_END]);
-    $this->registerCssFile('/js/fancybox/source/jquery.fancybox.css?v=2.1.5');
-    $this->registerCssFile('/js/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5');
-    $this->registerCssFile('/js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7');
+    /* if base web-path not equal "/" */
+    $baseUrl = Url::base();
+    $this->registerJsFile($baseUrl . '/js/angular.min.js', ['position' => \yii\web\View::POS_HEAD]);
+    $this->registerJsFile($baseUrl . '/js/angular-drag-and-drop-lists.min.js', ['position' => \yii\web\View::POS_HEAD]);
+    $this->registerJsFile($baseUrl . '/js/controllers/SiteIndexCtrl.js', ['position' => \yii\web\View::POS_HEAD]);
+    $this->registerJsFile($baseUrl . '/js/main.js', ['position' => \yii\web\View::POS_END]);
+    $this->registerJsFile($baseUrl . '/js/fancybox/lib/jquery.mousewheel-3.0.6.pack.js', ['position' => \yii\web\View::POS_END]);
+    $this->registerJsFile($baseUrl . '/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.5', ['position' => \yii\web\View::POS_END]);
+    $this->registerJsFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5', ['position' => \yii\web\View::POS_END]);
+    $this->registerJsFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6', ['position' => \yii\web\View::POS_END]);
+    $this->registerJsFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7', ['position' => \yii\web\View::POS_END]);
+    $this->registerCssFile($baseUrl . '/js/fancybox/source/jquery.fancybox.css?v=2.1.5');
+    $this->registerCssFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5');
+    $this->registerCssFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7');
     ?>
 </head>
 <body>
