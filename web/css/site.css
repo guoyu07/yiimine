@@ -125,3 +125,18 @@ a.desc:after {
     color: grey;
     font-style: italic;
 }
+.table-striped tr.priority-5,.table-striped tr.priority-5:nth-of-type(odd) {
+    background-color: rgba(255, 40, 40, 1);
+}
+.table-striped tr.priority-4,.table-striped tr.priority-4:nth-of-type(odd) {
+    background-color: rgba(255, 70, 70, 1);
+}
+.table-striped tr.priority-3,.table-striped tr.priority-3:nth-of-type(odd) {
+    background-color: rgba(255, 120, 120, 1);
+}
+.table-striped tr.priority-2,.table-striped tr.priority-2:nth-of-type(odd)  {
+    background-color: rgba(255, 165, 165, 1);
+}
+.table-striped tr.priority-1,.table-striped tr.priority-1:nth-of-type(odd)  {
+    background-color: rgba(255, 230, 230, 1);
+}

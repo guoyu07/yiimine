@@ -75,6 +75,9 @@ $this->title = $this->params['appSettings']['app_name'];
                         'filter' => false,
                     ],
                 ],
+                'rowOptions' =>  function ($model, $key, $index, $grid) {
+                        return ['class' => 'priority-' . $model->priority_id];
+                    },
             ]); ?>
         <?php endif; ?>
     </div>
