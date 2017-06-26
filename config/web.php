@@ -39,7 +39,7 @@ $config = [
                 ],
             ],
         ],
-        'db' => IS_PRODUCTION ? require(__DIR__ . '/db.php') : require(__DIR__ . '/local-db.php'),
+        'db' => require(__DIR__ . '/db.php'),
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
@@ -72,15 +72,14 @@ $config = [
 ];
 
 if (YII_ENV_DEV) {
-    // configuration adjustments for 'dev' environment
     $config['bootstrap'][] = 'debug';
-    $config['modules']['debug'] = 'yii\debug\Module';
+    $config['modules']['debug']['class'] = 'yii\debug\Module';
+    $config['modules']['debug']['enableDebugLogs'] = false;
+    $config['modules']['debug']['allowedIPs'] = ['*.*.*.*'];
 
     $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = [
-        'class'=>'yii\gii\Module',
-        'allowedIPs'=>['*']
-    ];
+    $config['modules']['gii']['class'] = 'yii\gii\Module';
+    $config['modules']['gii']['allowedIPs'] = ['*.*.*.*'];
 }
 
 return $config;

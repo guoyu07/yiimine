@@ -1,5 +1,6 @@
-#yiimine
-Redmine analog on yii2 framework
+# yiimine
+
+Project management PHP application
 
 ## Installation
 
