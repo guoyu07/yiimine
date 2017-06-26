@@ -1,4 +1,4 @@
-# yiimine
+![YiiMine](https://github.com/neo-classic/yiimine/tree/dev/web/uploads/logo/YiiMine_logo_small.png)
 
 Project management PHP application
 
