@@ -15,7 +15,7 @@ $this->title = $this->params['appSettings']['app_name'];
     <div class="jumbotron">
 
         <?php if(Yii::$app->user->isGuest): ?>
-            <?= Html::img('/uploads/settings/app_logo/'.$this->params['appSettings']['app_logo'], ['class' => 'img-thumbnail', 'width' => 300]); ?>
+            <?= Html::img('/uploads/logo/'.$this->params['appSettings']['app_logo'], ['class' => 'img-thumbnail', 'width' => 300]); ?>
             <br/>
             <?= HtmlPurifier::process($this->params['appSettings']['app_description']); ?>
         <?php else: ?>

@@ -320,7 +320,7 @@ class InstallController extends Controller
         $settingsArray = [
             'app_name' => 'YiiMine',
             'app_description' => 'Project Management System YiiMine welcomes you!',
-            'app_logo' => 'default_logo.png',
+            'app_logo' => 'YiiMine_logo_small.png',
         ];
 
         foreach ($settingsArray as $key => $value) {
