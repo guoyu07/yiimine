@@ -1,6 +1,7 @@
-![YiiMine](https://github.com/neo-classic/yiimine/raw/dev/web/uploads/logo/YiiMine_logo_big.png)
-
-Project management PHP application
+<p align="center">
+<img src="https://github.com/neo-classic/yiimine/raw/dev/web/uploads/logo/YiiMine_logo_small.png">
+</p>
+<p align="center">Project management PHP application</p>
 
 ## Installation
 
