@@ -32,36 +32,8 @@ class ProjectController extends CommonController
 
     public function actionIndex()
     {
-        $query = Project::find();
-        $query->orderBy('id DESC');
-        $query->andWhere([
-            'status_id' => ProjectStatusEnum::OPEN,
-        ]);
 
-        if (\Yii::$app->user->isGuest) {
-            $query->andWhere([
-                'is_public' => 1
-            ]);
-        }
-
-        $status = '';
-        if ($status = \Yii::$app->request->get('status')) {
-            switch ($status) {
-                case 'public':
-                    $query->andWhere(['is_public' => 1]);
-                    break;
-                case 'private':
-                    $query->andWhere(['is_public' => 0]);
-                    break;
-            }
-        }
-
-        return $this->render('index', [
-            'dataProvider' => new ActiveDataProvider([
-                'query' => $query,
-            ]),
-            'status' => $status,
-        ]);
+        return $this->render('index');
     }
 
     public function actionCreate()

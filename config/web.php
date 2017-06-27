@@ -59,6 +59,9 @@ $config = [
         'admin' => [
             'class' => 'app\modules\admin\Module',
         ],
+        'api' => [
+            'class' => 'app\modules\api\Module',
+        ],
         'gridview' =>  [
             'class' => '\kartik\grid\Module'
             // enter optional module parameters below - only if you need to

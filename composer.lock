@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "74bd3310774247b478a5f882424ec2d1",
+    "content-hash": "58cab1cb8f2e18fa335b16d129787ab3",
     "packages": [
         {
             "name": "bower-asset/bootstrap",
@@ -250,6 +250,57 @@
                     "package.json"
                 ]
             }
+        },
+        {
+            "name": "bower-asset/vue",
+            "version": "v2.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vuejs/vue.git",
+                "reference": "1f9416d514d80a99eb45184459fdf390405967ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vuejs/vue/zipball/1f9416d514d80a99eb45184459fdf390405967ec",
+                "reference": "1f9416d514d80a99eb45184459fdf390405967ec",
+                "shasum": ""
+            },
+            "type": "bower-asset-library"
+        },
+        {
+            "name": "bower-asset/vue-resource",
+            "version": "1.3.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pagekit/vue-resource.git",
+                "reference": "d66759e898be337f62d96e5502eccb1817b1790e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pagekit/vue-resource/zipball/d66759e898be337f62d96e5502eccb1817b1790e",
+                "reference": "d66759e898be337f62d96e5502eccb1817b1790e",
+                "shasum": ""
+            },
+            "type": "bower-asset-library",
+            "extra": {
+                "bower-asset-main": "dist/vue-resource.js",
+                "bower-asset-ignore": [
+                    ".*",
+                    "build",
+                    "docs",
+                    "package.json"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "The HTTP client for Vue.js",
+            "keywords": [
+                "ajax",
+                "http",
+                "vue",
+                "xhr"
+            ]
         },
         {
             "name": "bower-asset/yii2-pjax",

@@ -10,6 +10,7 @@ use app\assets\AppAsset;
 /* @var $content string */
 
 AppAsset::register($this);
+\app\assets\VueAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -43,11 +44,11 @@ AppAsset::register($this);
 <div class="wrap">
     <?php
     NavBar::begin([
-        'brandLabel' => $this->params['appSettings']['app_name'],
+        'brandLabel' => Html::img('/uploads/logo/YiiMine_logo_brand.png'),
         'brandUrl' => Yii::$app->homeUrl,
         'renderInnerContainer' => false,
         'options' => [
-            'class' => 'navbar navbar-fixed-top',
+            'class' => 'navbar navbar-default navbar-fixed-top',
         ],
     ]);
     echo Nav::widget([
@@ -91,7 +92,6 @@ AppAsset::register($this);
 
     NavBar::end();
     ?>
-    <br/><br/><br/>
     <div class="container-fluid">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
