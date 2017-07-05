@@ -33,6 +33,7 @@ AppAsset::register($this);
     $this->registerJsFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5', ['position' => \yii\web\View::POS_END]);
     $this->registerJsFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6', ['position' => \yii\web\View::POS_END]);
     $this->registerJsFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7', ['position' => \yii\web\View::POS_END]);
+    $this->registerJsFile($baseUrl . '/js/moment.min.js', ['position' => \yii\web\View::POS_HEAD]);
     $this->registerCssFile($baseUrl . '/js/fancybox/source/jquery.fancybox.css?v=2.1.5');
     $this->registerCssFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5');
     $this->registerCssFile($baseUrl . '/js/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7');

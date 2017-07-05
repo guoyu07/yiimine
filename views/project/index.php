@@ -24,16 +24,23 @@ $this->registerJsFile('/js/controllers/vProjectApp.js');
     </div>
 
     <?php if (!Yii::$app->user->isGuest): ?>
-        <div class="btn-group pull-right m-b-10" role="group">
-            <a href="<?= Url::toRoute(['index']); ?>" class="btn btn-default btn-sm" v-bind:class="getActiveButton('all')" v-on:click="setActiveButton('all')" onclick="return false">
-                <?= \Yii::t('app', 'All'); ?>
-            </a>
-            <a href="<?= Url::toRoute(['index', 'status' => 'public']); ?>" class="btn btn-default btn-sm" v-bind:class="getActiveButton('public')" v-on:click="setActiveButton('public')" onclick="return false">
-                <?= \Yii::t('app', 'Public'); ?>
-            </a>
-            <a href="<?= Url::toRoute(['index', 'status' => 'private']); ?>" class="btn btn-default btn-sm" v-bind:class="getActiveButton('private')" v-on:click="setActiveButton('private')" onclick="return false">
-                <?= \Yii::t('app', 'Private'); ?>
-            </a>
+        <div class="row">
+            <div class="col-sm-9">
+                <input type="text" class="form-control input-sm" placeholder="<?= Yii::t('app', 'Start typing project name...'); ?>" v-model="searchBy" />
+            </div>
+            <div class="col-sm-3">
+                <div class="btn-group pull-right m-b-10" role="group">
+                    <a href="<?= Url::toRoute(['index']); ?>" class="btn btn-default btn-sm" v-bind:class="getActiveButton('all')" v-on:click="setActiveButton('all')" onclick="return false">
+                        <?= \Yii::t('app', 'All'); ?>
+                    </a>
+                    <a href="<?= Url::toRoute(['index', 'status' => 'public']); ?>" class="btn btn-default btn-sm" v-bind:class="getActiveButton('public')" v-on:click="setActiveButton('public')" onclick="return false">
+                        <?= \Yii::t('app', 'Public'); ?>
+                    </a>
+                    <a href="<?= Url::toRoute(['index', 'status' => 'private']); ?>" class="btn btn-default btn-sm" v-bind:class="getActiveButton('private')" v-on:click="setActiveButton('private')" onclick="return false">
+                        <?= \Yii::t('app', 'Private'); ?>
+                    </a>
+                </div>
+            </div>
         </div>
         <div class="clearfix"></div>
     <?php endif; ?>
@@ -42,13 +49,19 @@ $this->registerJsFile('/js/controllers/vProjectApp.js');
         <div class="row" v-for="project in filteredProjects">
             <div class="col-sm-9">
                 {{ project.title }} <br/>
-                {{ project.description }}
+                <div v-html="project.description" class="text-muted"></div>
             </div>
             <div class="col-sm-3 text-right">
                 <span v-bind:class="labelClass(project)" class="label">{{ labelText(project) }}</span><br/>
-                <p><?= \Yii::t('app', 'Start Date') . ': '; ?>{{ project.created_date }}</p>
+                <p><?= \Yii::t('app', 'Start Date') . ': '; ?>{{ project.created_date | formatDate }}</p>
             </div>
+            <div class="clearfix"></div>
             <hr/>
+        </div>
+        <div class="row text-center" v-if="pagination.pageCount > 1">
+            <ul class="pagination">
+                <li v-for="page in pagination.pageCount" v-bind:class="{active: pagination.page == page}"><a href="#" :data-page="page" v-on:click="loadPage" onclick="return false">{{page}}</a></li>
+            </ul>
         </div>
     </div>
 </div>
