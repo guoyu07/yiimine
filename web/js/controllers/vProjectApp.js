@@ -12,7 +12,8 @@ var projectApp = new Vue({
             pageCount: 0
         },
         searchModel: 'ProjectSearch',
-        urlPostfix: ''
+        urlPostfix: '',
+        totalItemsCount: 0
     },
     created: function() {
         this.loadProjects(this.getUrl());
@@ -43,6 +44,7 @@ var projectApp = new Vue({
         },
         parsePagination: function(headers) {
             this.pagination['pageCount'] = parseInt(headers.map['X-Pagination-Page-Count']);
+            this.totalItemsCount = parseInt(headers.map['X-Pagination-Total-Count'])
         },
         loadPage: function(event) {
             this.pagination.page = event.target.attributes[1].value;
